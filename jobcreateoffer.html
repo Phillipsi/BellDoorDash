@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--Phillip Si-->
+<html>
+    <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src = "https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#newForm").validate({
+            // Make sure the form is submitted to the destination defined
+            // in the "action" attribute of the form when valid
+        });
+        $("#submit").click(function(){
+            $("#newForm").submit();
+            return false;
+        });
+      });
+    </script>
+    <style>
+        .error {
+          font: normal 10px arial;
+          padding: 3px;
+          margin: 3px;
+          background-color: #ffc;
+          border: 1px solid #c00;
+        }
+    </style>
+    </head>
+    <body>
+        <form id = "newForm" name = "newForm" method="post" action="jobOfferConnect.php">
+            <fieldset>
+                Food Place(Cafeteria, Cindy's, or Restaurant): <input name="restaurant" type="text" id="restaurant" class="required"><br>
+                Max Price: <input name="maxprice" type="text" id="maxprice" class="required"><br>
+                Minimum Markup: <input name="markup" type="text" id="markup" class="required"><br>
+                Time by which for customer to place order: <input name="ordertime" type="text" id="ordertime" class="required"><br>
+				<b>Delivery time details:</b> <br>
+                Month(1-12): <input name="deliverymonth" type="text" class="required NumbersOnly" id="deliverymonth" min="1" max="12"><br>
+                Day(1-31): <input name="deliveryday" type="text" class="required NumbersOnly" id="deliveryday" min="1" max="31"><br>
+                Hour(1-12): <input name="deliveryhour" type="text" class="required NumbersOnly" id="deliveryhour" min="1" max="12"><br>
+                Approximate minute(1-59): <input name="deliveryminute" type="text" class="required NumbersOnly" id="deliveryminute" min="1" max="59"><br>
+                
+            	<input type="radio" name="ampm" value="AM" class="required"> AM
+ 			 	<input type="radio" name="ampm" value="PM" class="required"> PM<br>
+            </fieldset>
+            <fieldset>
+             <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        
+        <h2>Typical Price Range Reference:</h2>
+    </body>
+</html>
